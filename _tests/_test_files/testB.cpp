@@ -1,4 +1,4 @@
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 #include <iostream>
 #include <iomanip>
 
@@ -15,9 +15,9 @@ using namespace std;
 bool test_stub(bool debug=false)
 {
   if (debug) {
-    cout << "testB:: test-sub() entering test_sub" << endl;
+    cout << "testB::test_stub()" << endl;
   }
-  return true;
+  return stub(); // returns true
 }
 
 //------------------------------------------------------------------------------
@@ -38,16 +38,8 @@ TEST(TEST_STUB, TestStub)
 }
 
 //------------------------------------------------------------------------------
-//@TODO: add more test sets to call test functions here:
+//@TODO: add more test cases to call test functions here:
 
 
 
 //------------------------------------------------------------------------------
-
-
-int main(int argc, char **argv)
-{
-  ::testing::InitGoogleTest(&argc, argv);
-  std::cout<<"\n\n----------running testB.cpp---------\n\n"<<std::endl;
-  return RUN_ALL_TESTS();
-}
